@@ -1,0 +1,30 @@
+{
+  "name": "@indiekitai/git-standup",
+  "version": "1.0.0",
+  "description": "Git standup report generator — scan repos and generate human-readable work summaries from git log",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "git-standup": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test test/",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["git", "standup", "report", "cli", "mcp"],
+  "author": "IndieKit <hello@indiekit.ai>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/indiekitai/git-standup.git"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^22.0.0"
+  }
+}
