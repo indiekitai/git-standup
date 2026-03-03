@@ -2,42 +2,42 @@
 
 # @indiekitai/git-standup
 
-Git standup report generator — scan local repos and generate human-readable work summaries from `git log`.
+Git standup 报告生成器 — 扫描本地仓库，从 `git log` 生成可读的工作摘要。
 
-**Zero dependencies.** Only uses `child_process` to call `git`.
+**零依赖。** 仅使用 `child_process` 调用 `git`。
 
-## Install
+## 安装
 
 ```bash
 npm install -g @indiekitai/git-standup
 ```
 
-## CLI Usage
+## CLI 用法
 
 ```bash
-# Yesterday's commits in current directory
+# 当前目录昨天的提交
 npx @indiekitai/git-standup
 
-# Custom time range
+# 自定义时间范围
 npx @indiekitai/git-standup --since "2 days ago"
 npx @indiekitai/git-standup --since "2024-01-01" --until "2024-01-31"
 
-# Scan multiple repos in a directory
+# 扫描目录下的多个仓库
 npx @indiekitai/git-standup --dir ~/projects
 
-# Filter by author
+# 按作者过滤
 npx @indiekitai/git-standup --author "sen"
 
-# JSON output (agent-friendly)
+# JSON 输出（agent 友好）
 npx @indiekitai/git-standup --json
 
-# Markdown output
+# Markdown 输出
 npx @indiekitai/git-standup --markdown
 ```
 
-### Output Formats
+### 输出格式
 
-**Text (default):**
+**文本（默认）：**
 ```
 Standup Report: 2024-01-15 → 2024-01-16
 Total: 3 commit(s) across 2 repo(s)
@@ -50,7 +50,7 @@ Total: 3 commit(s) across 2 repo(s)
   • chore: update deps (ghi7890)
 ```
 
-**JSON (`--json`):**
+**JSON（`--json`）：**
 ```json
 {
   "since": "2024-01-15",
@@ -69,7 +69,7 @@ Total: 3 commit(s) across 2 repo(s)
 }
 ```
 
-## Programmatic API
+## 编程式 API
 
 ```typescript
 import { generateStandup, formatText, formatMarkdown } from "@indiekitai/git-standup";
@@ -87,7 +87,7 @@ console.log(JSON.stringify(report)); // JSON
 
 ## MCP Server
 
-Built-in MCP server for AI agent integration:
+内置 MCP server，用于 AI agent 集成：
 
 ```json
 {
@@ -100,12 +100,12 @@ Built-in MCP server for AI agent integration:
 }
 ```
 
-### Tools
+### 工具
 
-| Tool | Description |
-|------|-------------|
-| `generate_standup` | Generate standup report with optional dir, since, until, author, format params |
-| `list_repos` | List git repositories found in a directory |
+| 工具 | 说明 |
+|------|------|
+| `generate_standup` | 生成 standup 报告，支持 dir、since、until、author、format 等参数 |
+| `list_repos` | 列出目录中找到的 git 仓库 |
 
 ## License
 
